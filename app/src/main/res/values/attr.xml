@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LineView">
+        <attr name="textTitle" format="string"/>
+        <attr name="textInfo" format="string"/>
+        <attr name="imageIcon" format="reference"/>
+        <attr name="tintIcon" format="color"/>
+        <attr name="textLabel" format="string"/>
+        <attr name="textHint" format="string"></attr>
+        <attr name="textDefaultValue" format="string"></attr>
+        <attr name="android:inputType"/>
+    </declare-styleable>
+
+    <declare-styleable name="ProgressBarView">
+        <attr name="textBigTitle" format="string"/>
+        <attr name="textValue" format="string"/>
+        <attr name="textLimit" format="string"/>
+    </declare-styleable>
+
+    <declare-styleable name="UsageBarView">
+        <attr name="textPercentageLabel" format="string"/>
+    </declare-styleable>
+</resources>

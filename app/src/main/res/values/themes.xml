@@ -1,0 +1,24 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="Material3Theme" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="fontFamily">@font/regular</item>
+        <item name="android:windowLightStatusBar">?attr/isLightTheme</item>
+        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
+        <item name="android:statusBarColor">?android:attr/colorBackground</item>
+    </style>
+
+    <style name="Material3Theme.TabText" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="fontFamily">@font/medium</item>
+    </style>
+
+    <style name="Material3Theme.AppBarExpandedTitle" parent="TextAppearance.Material3.HeadlineLarge">
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="fontFamily">@font/regular</item>
+    </style>
+    <style name="Material3Theme.AppBarCollapsedTitle" parent="TextAppearance.Material3.TitleLarge">
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="fontFamily">@font/regular</item>
+    </style>
+</resources>

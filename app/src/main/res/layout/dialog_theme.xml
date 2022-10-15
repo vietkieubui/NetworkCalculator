@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/transparent"
+    android:orientation="vertical"
+    android:paddingHorizontal="16dp"
+    android:paddingTop="16dp">
+
+    <RadioButton
+        android:id="@+id/radio_limited"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/regular"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:padding="10dp"
+        android:text="@string/dialog_theme_light"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+    <RadioButton
+        android:id="@+id/radio_unlimited"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/regular"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:padding="10dp"
+        android:text="@string/dialog_theme_dark"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+    <RadioButton
+        android:id="@+id/radio_system"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/regular"
+        android:foreground="?attr/selectableItemBackgroundBorderless"
+        android:padding="10dp"
+        android:text="@string/dialog_theme_system"
+        android:textAppearance="@style/TextAppearance.AppCompat.Subhead" />
+
+</LinearLayout>

@@ -1,0 +1,66 @@
+<resources>
+    <string name="app_name">Data usage</string>
+    <string name="app_info">Made with &#10084; in Czechia</string>
+    <string name="app_author" translatable="false">Viet Kieu Bui</string>
+
+    <string name="today">Today</string>
+    <string name="period">Period</string>
+
+    <string name="settings_title">Settings</string>
+    <string name="settings_category_appearance">Appearance</string>
+    <string name="settings_category_limits">Limits</string>
+    <string name="settings_category_notifications">Notifications</string>
+    <string name="settings_category_permissions">Permissions</string>
+    <string name="settings_category_information">Information</string>
+    <string name="setting_theme_title">Theme</string>
+    <string name="setting_permission_ignore_battery_optimization_title">Ignore battery optimization</string>
+    <string name="setting_permission_ignore_battery_optimization_info">This will allow this app to run in background constantly</string>
+    <string name="setting_permission_phone_title">Phone</string>
+    <string name="setting_permission_phone_info">This will allow this app to read subscriber ID needed for access to the data usage</string>
+    <string name="setting_permission_usage_access_title">Usage data access</string>
+    <string name="setting_permission_usage_access_info">This will allow this app to read your data usage</string>
+    <string name="setting_notification_permanent_title">Permanent notification</string>
+    <string name="setting_notification_permanent_info">Shows today\'s usage and limit</string>
+    <string name="setting_period_starting_day_title">Period starting day</string>
+    <string name="setting_period_limit_title">Period limit</string>
+    <string name="setting_daily_limit_title">Daily limit</string>
+    <string name="setting_daily_limit_calculated_title">Calculate daily limit</string>
+    <string name="setting_daily_limit_calculated_info">Your daily limit will be calculated depending on your period limit and previous daily usage</string>
+    <string name="setting_information_github_title" translatable="false">Github</string>
+    <string name="setting_information_github_info">Checkout app on github</string>
+
+    <string name="period_info_main_1">%1$d day remaining (%2$s)</string>
+    <string name="period_info_main_2">%1$d days remaining (%2$s)</string>
+    <string name="period_info_main_3">%1$d days remaining (%2$s)</string>
+
+    <string name="dialog_theme_title">Choose theme</string>
+    <string name="dialog_theme_dark">Dark</string>
+    <string name="dialog_theme_light">Light</string>
+    <string name="dialog_theme_system">Default system setting</string>
+    <string name="dialog_positive_button">Save</string>
+    <string name="dialog_negative_button">Cancel</string>
+
+    <string name="apps_empty">No app used data</string>
+
+    <string name="notification_permanent_title">Used: %1$s</string>
+    <string name="notification_permanent_info">Limit: %1$s</string>
+    <string name="notification_warning_title">Usage warning</string>
+    <string name="notification_warning_info">You already used %1$d% of your daily limit</string>
+
+    <string name="app_detail_title">App detail</string>
+    <string name="app_detail_data_transmitted">Transmitted</string>
+    <string name="app_detail_data_received">Received</string>
+    <string name="app_detail_data_total">Total</string>
+    <string name="app_detail_system">System</string>
+    <string name="app_detail_settings_title">App info</string>
+    <string name="app_detail_settings_info">System information about this app</string>
+
+    <string name="menu_item_apps">Apps</string>
+    <string name="menu_item_overview">Overview</string>
+
+    <string name="overview_bar_day">used of your daily limit</string>
+    <string name="overview_bar_period">used of your period limit</string>
+
+    <string name="usage_bar_used">used</string>
+    <string name="usage_bar_left">left</string>
+</resources>
