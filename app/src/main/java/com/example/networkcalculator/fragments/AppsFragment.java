@@ -1,6 +1,7 @@
 package com.example.networkcalculator.fragments;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -13,6 +14,7 @@ import android.app.Fragment;
 
 import android.os.Handler;
 import android.os.Looper;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -117,7 +119,7 @@ public class AppsFragment extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.M)
     private List<Package> getPackages() {
         PackageManager packageManager = context.getPackageManager();
-        List<PackageInfo> packageInfoList = packageManager.getInstalledPackages(PackageManager.GET_META_DATA);
+        @SuppressLint("QueryPermissionsNeeded") List<PackageInfo> packageInfoList = packageManager.getInstalledPackages(PackageManager.GET_META_DATA);
 
         List<Package> packageList = new ArrayList<>(packageInfoList.size());
         for (PackageInfo packageInfo : packageInfoList) {
@@ -125,7 +127,7 @@ public class AppsFragment extends Fragment {
                 continue;
             }
 
-            Long dataUsage = 0L;
+            long dataUsage;
 
             if(tabLayout.getSelectedTabPosition() == 0) {
                 dataUsage = networkUsageManager.getPackageBytesMobile(packageInfo.applicationInfo.uid, DateTimeUtils.getDayStartMillis(), DateTimeUtils.getDayEndMillis());
@@ -133,12 +135,14 @@ public class AppsFragment extends Fragment {
                 dataUsage = networkUsageManager.getPackageBytesMobile(packageInfo.applicationInfo.uid, DateTimeUtils.getPeriodStartMillis(preferenceManager.getPeriodStart()), DateTimeUtils.getPeriodEndMillis(preferenceManager.getPeriodStart()));
             }
 
-            if(dataUsage <= 0) {
+            Log.d("TAG APP USAGE:",String.valueOf(dataUsage));
+            if(dataUsage < 0) {
                 continue;
             }
 
             Package packageItem = new Package();
             packageItem.setPackageName(packageInfo.packageName);
+
             packageItem.setDataUsage(dataUsage);
             packageList.add(packageItem);
             ApplicationInfo ai = null;
@@ -161,7 +165,7 @@ public class AppsFragment extends Fragment {
         return packageList;
     }
 
-    public class Package {
+    public static class Package {
         private String name;
         private String packageName;
         private Long dataUsage;
@@ -193,7 +197,7 @@ public class AppsFragment extends Fragment {
 
     }
 
-    public class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.PackageViewHolder> {
+    public static class PackageAdapter extends RecyclerView.Adapter<PackageAdapter.PackageViewHolder> {
         List<Package> mPackageList;
 
         public PackageAdapter(List<Package> packageList) {

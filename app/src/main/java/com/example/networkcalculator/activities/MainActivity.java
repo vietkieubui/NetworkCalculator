@@ -2,25 +2,21 @@ package com.example.networkcalculator.activities;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.Debug;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
+import com.example.networkcalculator.fragments.AppsFragment;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.example.networkcalculator.BottomNavigationPager;
 import com.example.networkcalculator.NotifyService;
-import com.example.networkcalculator.fragments.AppsFragment;
 import com.example.networkcalculator.fragments.OverviewFragment;
 import com.example.networkcalculator.R;
 import com.example.networkcalculator.managers.PermissionManager;
@@ -53,6 +49,8 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         bottomNavigationPager = new BottomNavigationPager(this, bottomNavigationView, R.id.content);
         bottomNavigationPager.bindFragment(R.id.menu_item_overview, new OverviewFragment());
+//        bottomNavigationPager.bindFragment(R.id.battery_overviews, new BatteryFragment());
+        bottomNavigationPager.bindFragment(R.id.apps, new AppsFragment());
         bottomNavigationPager.enable();
 
         if (PermissionManager.hasPermissions(this)) {

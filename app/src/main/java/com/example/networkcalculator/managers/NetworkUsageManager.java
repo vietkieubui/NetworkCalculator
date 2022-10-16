@@ -8,6 +8,7 @@ import android.content.Context;
 import android.net.ConnectivityManager;
 import android.os.Build;
 import android.telephony.TelephonyManager;
+import android.util.Log;
 
 
 import androidx.annotation.RequiresApi;
@@ -67,8 +68,8 @@ public class NetworkUsageManager {
     public long getPackageBytesMobile(int uid, long startTime, long endTime, int byteType) {
         try {
             NetworkStats networkStats;
-            networkStats = networkStatsManager.queryDetailsForUid(ConnectivityManager.TYPE_WIFI, getSubscriberId(), startTime, endTime, uid);
-
+//            networkStats = networkStatsManager.queryDetailsForUid(ConnectivityManager.TYPE_WIFI, getSubscriberId(), startTime, endTime, uid);
+            networkStats = networkStatsManager.queryDetailsForUid(ConnectivityManager.TYPE_WIFI, "356744102715805", startTime, endTime, uid);
             long bytes = 0;
             NetworkStats.Bucket bucket = new NetworkStats.Bucket();
             while (networkStats.hasNextBucket()) {
@@ -91,6 +92,7 @@ public class NetworkUsageManager {
     @SuppressLint("MissingPermission")
     private String getSubscriberId() {
         TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
+
         if (PermissionManager.hasPermissionToReadPhoneStats(context)) {
             return tm.getSubscriberId();
         }
