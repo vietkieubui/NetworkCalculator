@@ -29,12 +29,13 @@ public class Utils {
         if (bytes < 1000) {
             return bytes + " B";
         }
-        CharacterIterator ci = new StringCharacterIterator("kMGTPE");
-        while (bytes >= 999_950) {
-            bytes /= 1000;
-            ci.next();
-        }
-        return String.format(Locale.getDefault(), "%.1f %cB", bytes / 1000.0, ci.current());
+//        CharacterIterator ci = new StringCharacterIterator("kMGTPE");
+//        while (bytes >= 999_950) {
+//            bytes /= 1000;
+//            ci.next();
+//        }
+//        return String.format(Locale.getDefault(), "%.1f %cB", bytes / 1000.0, ci.current());
+        return String.format(Locale.getDefault(), "%.1f B", bytes / 1000.0 );
     }
 
     public static String formatDaysReaming(Context context, int days, String date) {

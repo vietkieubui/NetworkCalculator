@@ -50,6 +50,7 @@ public class NetworkUsageManager {
         try {
             NetworkStats.Bucket bucket;
             bucket = networkStatsManager.querySummaryForDevice(ConnectivityManager.TYPE_WIFI, null, startTime, endTime);
+
             return getBytes(bucket, byteType);
         } catch (Exception e) {
             e.printStackTrace();
