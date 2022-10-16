@@ -11,6 +11,14 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
+import android.util.Log;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
+import java.time.ZoneId;
+import java.util.Calendar;
+import java.util.Date;
 
 import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
@@ -59,6 +67,22 @@ public class NotifyService extends Service {
             public void run() {
                 preferenceManager.reload();
                 boolean isMobileDataConnected = connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().getType() == ConnectivityManager.TYPE_MOBILE;
+//                int daysTillEndOfPeriod = DateTimeUtils.getDaysTillPeriodEnd(preferenceManager);
+//                Long periodUsage = networkUsageManager.getAllBytesMobile(DateTimeUtils.getPeriodStartMillis(preferenceManager.getPeriodStart()), DateTimeUtils.getDayEndMillis());
+//                Long periodLimit = preferenceManager.getPeriodLimit();
+//                Long dailyUsage = networkUsageManager.getAllBytesMobile(DateTimeUtils.getDayStartMillis(), DateTimeUtils.getDayEndMillis());
+//                Long dailyLimit = preferenceManager.getDailyLimitCustom() ? preferenceManager.getDailyLimit() : (periodLimit - (periodUsage-dailyUsage)) / daysTillEndOfPeriod;
+
+                Date daysTillEndOfPeriod1 = Calendar.getInstance().getTime();
+
+
+//                LocalDate localDate = LocalDate.now();
+//                LocalDateTime startOfDay = localDate.atStartOfDay();
+//                long timeStamp = startOfDay.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
+//                LocalDateTime endOfDay = localDate.atTime(LocalTime.MAX);
+//                long endTimeStamp = endOfDay.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli();
+//                Log.d("TAG1: ",String.valueOf(endTimeStamp));
+//                Log.d("TAG2: ",String.valueOf(DateTimeUtils.getDayEndMillis()));
                 int daysTillEndOfPeriod = DateTimeUtils.getDaysTillPeriodEnd(preferenceManager);
                 Long periodUsage = networkUsageManager.getAllBytesMobile(DateTimeUtils.getPeriodStartMillis(preferenceManager.getPeriodStart()), DateTimeUtils.getDayEndMillis());
                 Long periodLimit = preferenceManager.getPeriodLimit();

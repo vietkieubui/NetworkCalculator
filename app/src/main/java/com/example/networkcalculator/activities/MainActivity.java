@@ -51,8 +51,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onResume() {
         super.onResume();
-        Toast.makeText(this, android.net.TrafficStats.getMobileRxBytes()+"Bytes", Toast.LENGTH_SHORT).show();
-
         bottomNavigationPager = new BottomNavigationPager(this, bottomNavigationView, R.id.content);
         bottomNavigationPager.bindFragment(R.id.menu_item_overview, new OverviewFragment());
         bottomNavigationPager.bindFragment(R.id.apps, new AppsFragment());

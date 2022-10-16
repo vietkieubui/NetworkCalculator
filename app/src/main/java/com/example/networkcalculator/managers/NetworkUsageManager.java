@@ -49,7 +49,7 @@ public class NetworkUsageManager {
     public long getAllBytesMobile(long startTime, long endTime, int byteType) {
         try {
             NetworkStats.Bucket bucket;
-            bucket = networkStatsManager.querySummaryForDevice(ConnectivityManager.TYPE_MOBILE, null, startTime, endTime);
+            bucket = networkStatsManager.querySummaryForDevice(ConnectivityManager.TYPE_WIFI, null, startTime, endTime);
             return getBytes(bucket, byteType);
         } catch (Exception e) {
             e.printStackTrace();
@@ -66,7 +66,7 @@ public class NetworkUsageManager {
     public long getPackageBytesMobile(int uid, long startTime, long endTime, int byteType) {
         try {
             NetworkStats networkStats;
-            networkStats = networkStatsManager.queryDetailsForUid(ConnectivityManager.TYPE_MOBILE, getSubscriberId(), startTime, endTime, uid);
+            networkStats = networkStatsManager.queryDetailsForUid(ConnectivityManager.TYPE_WIFI, getSubscriberId(), startTime, endTime, uid);
 
             long bytes = 0;
             NetworkStats.Bucket bucket = new NetworkStats.Bucket();
