@@ -53,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         bottomNavigationPager = new BottomNavigationPager(this, bottomNavigationView, R.id.content);
         bottomNavigationPager.bindFragment(R.id.menu_item_overview, new OverviewFragment());
-        bottomNavigationPager.bindFragment(R.id.apps, new AppsFragment());
         bottomNavigationPager.enable();
 
         if (PermissionManager.hasPermissions(this)) {
