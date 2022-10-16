@@ -1,11 +1,13 @@
 package com.example.networkcalculator.activities;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Debug;
 import android.util.Log;
@@ -45,9 +47,11 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onResume() {
         super.onResume();
+        Toast.makeText(this, android.net.TrafficStats.getMobileRxBytes()+"Bytes", Toast.LENGTH_SHORT).show();
 
         bottomNavigationPager = new BottomNavigationPager(this, bottomNavigationView, R.id.content);
         bottomNavigationPager.bindFragment(R.id.menu_item_overview, new OverviewFragment());

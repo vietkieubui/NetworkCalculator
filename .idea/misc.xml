@@ -4,8 +4,17 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android Code/NetworkCalculator/app/src/main/res/layout/activity_app_detail.xml" value="0.275" />
+        <entry key="..\:/Android Code/NetworkCalculator/app/src/main/res/layout/activity_main.xml" value="0.275" />
         <entry key="..\:/Android Code/NetworkCalculator/app/src/main/res/layout/activity_settings.xml" value="0.275" />
+        <entry key="..\:/Android Code/NetworkCalculator/app/src/main/res/layout/dialog_data_size.xml" value="0.275" />
+        <entry key="..\:/Android Code/NetworkCalculator/app/src/main/res/layout/dialog_day_picker.xml" value="0.275" />
+        <entry key="..\:/Android Code/NetworkCalculator/app/src/main/res/layout/dialog_theme.xml" value="0.275" />
+        <entry key="..\:/Android Code/NetworkCalculator/app/src/main/res/layout/fragment_apps.xml" value="0.275" />
         <entry key="..\:/Android Code/NetworkCalculator/app/src/main/res/layout/fragment_overview.xml" value="0.275" />
+        <entry key="..\:/Android Code/NetworkCalculator/app/src/main/res/layout/item_app.xml" value="0.275" />
+        <entry key="..\:/Android Code/NetworkCalculator/app/src/main/res/layout/item_line.xml" value="0.275" />
+        <entry key="..\:/Android Code/NetworkCalculator/app/src/main/res/layout/item_line_switch.xml" value="0.275" />
+        <entry key="..\:/Android Code/NetworkCalculator/app/src/main/res/layout/item_usage_bar.xml" value="0.275" />
       </map>
     </option>
   </component>

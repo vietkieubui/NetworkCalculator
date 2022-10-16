@@ -5,6 +5,9 @@ import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.content.Context;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -20,6 +23,7 @@ public class BottomNavigationPager {
     Map<Integer, Fragment> fragmentMap;
     Integer activeId;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public BottomNavigationPager(Context context, BottomNavigationView bottomNavigationView, Integer containerId) {
         this.context = context;
         this.bottomNavigationView = bottomNavigationView;

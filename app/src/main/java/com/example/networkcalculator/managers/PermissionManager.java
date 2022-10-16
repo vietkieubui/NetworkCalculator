@@ -13,6 +13,7 @@ import android.os.Process;
 import android.provider.Settings;
 import android.widget.Toast;
 
+import androidx.annotation.RequiresApi;
 import androidx.core.app.ActivityCompat;
 
 import static android.content.Context.POWER_SERVICE;
@@ -27,6 +28,7 @@ public class PermissionManager {
         return ActivityCompat.checkSelfPermission(context, Manifest.permission.READ_PHONE_STATE) == PackageManager.PERMISSION_GRANTED;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public static boolean hasPermissionToIgnoreBatteryOptimizations(Context context) {
         PowerManager pm = (PowerManager) context.getSystemService(POWER_SERVICE);
         return pm.isIgnoringBatteryOptimizations(context.getPackageName());
@@ -42,6 +44,7 @@ public class PermissionManager {
         return mode == AppOpsManager.MODE_ALLOWED;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
     public static void requestPermissions(Context context) {
         if(!hasPermissionToReadNetworkHistory(context)) {
             requestPermissionToReadNetworkHistory(context);

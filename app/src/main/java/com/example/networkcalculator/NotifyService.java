@@ -7,11 +7,13 @@ import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.os.Build;
 import android.os.Handler;
 import android.os.IBinder;
 import android.os.Looper;
 
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.core.app.NotificationCompat;
 
 import com.example.networkcalculator.activities.MainActivity;
@@ -22,9 +24,9 @@ import com.example.networkcalculator.managers.PreferenceManager;
 public class NotifyService extends Service {
 
     private static final int NOTIFICATION_PERMANENT_ID = 1;
-    private static final String NOTIFICATION_PERMANENT_CHANNEL = "datausage.permanent";
+    private static final String NOTIFICATION_PERMANENT_CHANNEL = "NetworkCalculator.permanent";
     private static final int NOTIFICATION_USAGE_WARNING_ID = 2;
-    private static final String NOTIFICATION_USAGE_WARNING_CHANNEL = "datausage.warning";
+    private static final String NOTIFICATION_USAGE_WARNING_CHANNEL = "NetworkCalculator.warning";
     private static final int HANDLER_DELAY = 2000;
 
     Handler handler;
@@ -33,6 +35,7 @@ public class NotifyService extends Service {
     PreferenceManager preferenceManager;
     NetworkUsageManager networkUsageManager;
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
 
