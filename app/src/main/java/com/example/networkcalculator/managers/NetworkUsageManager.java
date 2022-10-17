@@ -68,8 +68,7 @@ public class NetworkUsageManager {
     public long getPackageBytesMobile(int uid, long startTime, long endTime, int byteType) {
         try {
             NetworkStats networkStats;
-//            networkStats = networkStatsManager.queryDetailsForUid(ConnectivityManager.TYPE_WIFI, getSubscriberId(), startTime, endTime, uid);
-            networkStats = networkStatsManager.queryDetailsForUid(ConnectivityManager.TYPE_WIFI, "356744102715805", startTime, endTime, uid);
+            networkStats = networkStatsManager.queryDetailsForUid(ConnectivityManager.TYPE_WIFI, "358240041111110", startTime, endTime, uid);
             long bytes = 0;
             NetworkStats.Bucket bucket = new NetworkStats.Bucket();
             while (networkStats.hasNextBucket()) {
